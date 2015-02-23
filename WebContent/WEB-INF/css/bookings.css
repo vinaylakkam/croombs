@@ -1,0 +1,105 @@
+/**** chart ****/
+
+table.chart
+{
+	/*background:#477795 none repeat scroll 0 0;*/
+	border-collapse:collapse;
+	border-spacing:1px;
+	margin:1px 0 1em;
+	width:100%;
+	font-size:12px;
+}
+
+table.chart thead th,table.chart tbody td{
+	background:#fff;
+	padding:0.25em 0.35em;
+	border: 1px solid #477795;	
+}
+
+table.chart thead th{
+	font-size:12px;
+	color:#555;
+	line-height:18px;
+	background:#5c99c7;
+}
+
+table.chart thead th div.date{
+	position:relative;
+	padding:0 10px 0 0;
+}
+
+table.chart tbody td.day{
+ 	color:#a3a3a3;
+	font-size:12px;
+	font-weight:bold;
+	text-align:left;
+	text-transform:capitalize;
+}
+
+
+table.chart tbody td{
+	cursor:hand; 
+	cursor:pointer;
+}
+
+ 
+
+ 
+/*********/
+#div_confDtls_callout {
+	/*background-image:url();
+	filter:alpha(opacity=30);*/ 
+	
+	background-color: lightyellow;
+	position:absolute;	
+	border-style: solid;
+	border-color: #999999;
+	border-width: 1px;
+	/*width:200px; 
+	height:150px ;*/	
+}
+
+#div_confDtls_callout dt{
+	font-weight:bold;
+}
+
+#div_confDtls_callout dt .contact{
+	list-style-image:url('phone.gif');
+}
+
+
+#div_confDtls_callout tr{
+	/**/
+}
+#div_booking_banner {
+	display:none;
+	position:relative;
+
+	/*
+	position: fixed;
+	right: 50px;
+	*/
+	
+	font-size:20px;
+	background:lightyellow;
+
+	border-style: solid;
+	border-color: #999999;
+	border-width: 1px;
+	
+	width: 150px;
+	height: 50px;
+	
+}
+
+#div_notification{
+	
+	font-size: 16px;
+	margin-top:1em;
+	padding-top:0.3em;
+	padding-bottom:0.3em;
+	padding-left:0.3em;
+	padding-right:0.3em;
+	
+	background:#d5dfb5;
+}

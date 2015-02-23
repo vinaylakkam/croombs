@@ -1,0 +1,112 @@
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>Croombs</display-name>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>	
+	
+	
+	<servlet>
+		<description>BookingController</description>
+		<display-name>BookingController</display-name>
+		<servlet-name>BookingController</servlet-name>
+		<servlet-class>com.croombs.servlets.BookingController</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description>RoomController</description>
+		<display-name>RoomController</display-name>
+		<servlet-name>RoomController</servlet-name>
+		<servlet-class>com.croombs.servlets.RoomController</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>MyBookingsController</description>
+		<display-name>MyBookingsController</display-name>
+		<servlet-name>MyBookingsController</servlet-name>
+		<servlet-class>com.croombs.servlets.MyBookingsController</servlet-class>
+	</servlet>
+	<servlet>
+		<description>MyProfileController</description>
+		<display-name>MyProfileController</display-name>
+		<servlet-name>MyProfileController</servlet-name>
+		<servlet-class>com.croombs.servlets.MyProfileController</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>Login</description>
+		<display-name>Login</display-name>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>com.croombs.servlets.LoginController</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>FAQController</description>
+		<display-name>FAQController</display-name>
+		<servlet-name>FAQController</servlet-name>
+		<servlet-class>com.croombs.servlets.FAQController</servlet-class>
+	</servlet>		
+
+	<servlet>
+		<description>StreamServlet</description>
+		<display-name>StreamServlet</display-name>
+		<servlet-name>StreamServlet</servlet-name>
+		<servlet-class>com.croombs.StreamServlet</servlet-class>
+	</servlet>
+
+	
+
+	<servlet-mapping>
+		<servlet-name>BookingController</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BookingController</servlet-name>
+		<url-pattern>/Home</url-pattern>
+	</servlet-mapping>	
+	<servlet-mapping>
+		<servlet-name>RoomController</servlet-name>
+		<url-pattern>/Rooms</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MyBookingsController</servlet-name>
+		<url-pattern>/MyBookings</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MyProfileController</servlet-name>
+		<url-pattern>/MyProfile</url-pattern>
+	</servlet-mapping>	
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FAQController</servlet-name>
+		<url-pattern>/Faq</url-pattern>
+	</servlet-mapping>		
+	<servlet-mapping>
+		<servlet-name>StreamServlet</servlet-name>
+		<url-pattern>/images/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>StreamServlet</servlet-name>
+		<url-pattern>/jsps/*</url-pattern>
+	</servlet-mapping>
+	
+
+	<!--  Using Struts for My Profile -->
+    <!-- filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/XYZ</url-pattern>
+    </filter-mapping--> 	
+
+</web-app>

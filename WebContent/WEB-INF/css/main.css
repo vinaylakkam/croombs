@@ -1,0 +1,138 @@
+body{
+	margin:0 auto;
+	padding:0;
+	font-family:arial,helvetica,verdana,sans-serif;
+	color:#333;
+	background-color:#fff;
+	text-align:center;
+	font-size:12px;
+	width:100%;
+	height:100%;	
+	/*width:expression(document.body.clientWidth < 1150 ? "1152px":"100%");*/
+}
+
+#div_header{
+	border-top:1px solid #fff;
+	border-bottom:1px solid #c2c2c2;
+}
+
+#div_header, #div_wrapper, #div_footer {
+	margin:auto;
+	text-align:left;
+	padding:0;
+	/*min-width:850px;*/
+	clear:both;
+	/*width:100%;*/
+
+	/*width:expression(document.body.clientWidth < 855 ? "850px":"100%");*/
+	/*width:expression(document.body.clientWidth < 1150 ? "1152px":"100%");*/
+	
+}
+
+#div_wrapper {}
+
+#div_footer {
+	border-top:#c2c2c2 1px solid;
+	text-align:center;
+	font-size:10px
+}
+ 
+#div_logo_line a{
+	padding:0 60px; 
+	width:200px; 
+	height:70px
+}
+#div_logo_line a:visited{color:#ffffff}			
+
+/***** Main Tabs *****/
+#div_tabs{
+	
+	clear:both;
+	margin:0px;
+	padding-left:160px;
+}
+
+#div_mainTabs{
+	padding:0px;
+	margin:0px
+}
+#div_mainTabs li.first{padding-left:0; display:inline;clear:both;  border-left: none;}
+#div_mainTabs li{padding:0 20px 0 20px; display:inline; clear:both; border-left: 1px dotted #90A214;}
+
+
+
+/***** login [on header]******/
+
+#div_header_options, #div_login_form, #div_header_loggedin_options{
+	position: absolute;
+	font-size: 11px;
+	top: 15px;
+	right: 50px;	
+}
+span.remember {
+	position: absolute;	
+	top: 27px;
+	right: 95px;	
+	font-size: 10px;
+}
+span.forgot-cancel {
+	position: absolute;	
+	top: 30px;
+	right: 200px;	
+	font-size: 10px;
+}
+
+#div_header_options li.first,#div_header_loggedin_options li.first{padding-left:0; display:inline; list-style:none; border-left: none;}
+#div_header_options li,#div_header_loggedin_options li{ margin:0; padding:0 6px 0 12px; font-size:12px; display:inline; list-style:none; border-left: 1px solid #CC66FF;}
+
+#span_userName{
+	font-weight:bold;
+	color:#11558d;
+}
+
+/***** login [on header] [end]******/
+
+
+#div_container {
+	width:90%;
+	margin: 10px auto 0px;
+	padding-bottom: 0px;
+	padding-left: 30px;
+	padding-bottom: 30px;	
+}
+
+
+table.chart_nav
+{
+	margin:10px 0 0px;
+	width:100%;
+	font-size:12px;
+}
+
+.floatableDiv {
+	background-color: #ffffff;
+	position:absolute;
+	z-index:10000; /* set z-index higher than possible */
+	display: 'block';
+	
+	border-style: solid;
+	border-color: #999999;
+	border-width: 1px;
+}
+
+.floatingHeader
+{
+	background-color: #669999;
+	color:#ffffff;
+	cursor:move;
+	height:18px	;
+	align:center;
+}
+
+#div_login_error {
+	color:red;
+}
+
+.fieldError {
+	color:red;	
+}

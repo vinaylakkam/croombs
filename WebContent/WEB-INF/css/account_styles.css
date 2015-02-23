@@ -1,0 +1,36 @@
+
+ div#AccountHeader{
+	padding:.1em 60px;
+    margin:0 auto;
+    text-align:left;
+    clear:both;
+    border-bottom:1px solid #c3c3c3;
+    background:#d5dfb5;
+    padding-bottom:4px;
+    
+ }
+ 
+ div#AccountHeader h1{
+ 	font-size:14px;
+    padding:0 0 .5em;
+    margin:.5em 0
+ }
+
+
+ ul.ac_tabs{font-size:10px; margin:0; padding:0;}
+ ul.ac_tabs li{font-size:12px; border:0;padding:0; display:inline;}
+ ul.ac_tabs li a:link, ul.ac_tabs li a:visited, ul.ac_tabs li a:hover, ul.ac_tabs li a:active{
+	padding:4px 8px; border-bottom:0px
+ }
+ ul.ac_tabs li a:visited{}
+ ul.ac_tabs li a:hover{background:#fff}
+ ul.ac_tabs li a.current{
+	 color:#000;
+	 background-color:#fff;
+	 border:1px solid #ccc;
+	 border-bottom:#fff 1px solid;
+	 font-weight:bold;
+	 text-decoration:none
+ }
+ 
+ ul.ac_tabs li a.previous{}

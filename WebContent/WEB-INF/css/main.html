@@ -1,0 +1,175 @@
+<html>
+	<head>
+		<title>RSM Documentation Updator</title>
+
+		<link type="text/css" href="styles.css" rel="stylesheet"/>
+
+		<script>
+			var path = "C:\\Documents and Settings\\144037\\Desktop\\if stmt code\\"
+			var fileName= "";
+			var xmlObjG=loadXMLDoc(path+fileName);
+
+			function loadXMLDoc(fname)
+			{
+			  var xmlDoc;
+			  // code for IE
+			  if (window.ActiveXObject)
+			  {
+				xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+			  }
+			  // code for Mozilla, Firefox, Opera, etc.
+			  else if (document.implementation && document.implementation.createDocument)
+			  {
+				xmlDoc=document.implementation.createDocument("","",null);
+			   }
+			  else
+			  {
+				alert('Your browser cannot handle this script');
+			  }
+			xmlDoc.async=false;
+			xmlDoc.load(fname);
+			return(xmlDoc);
+			}
+
+			function displayResult()
+			{
+
+			  var fName = document.forms[0].Inp_PrgName.value+".COB.emx";
+			  alert(path+fName);
+			  xmlObjG=loadXMLDoc(path+fName);
+			  alert("hi1"+xmlObjG);
+				xsl=loadXMLDoc("UpdateClassComment2.xsl");
+				// code for IE
+				if (window.ActiveXObject)
+				{
+						ex=xmlObjG.transformNode(xsl);
+					document.getElementById("example").innerHTML=ex;
+				  }
+				// code for Mozilla, Firefox, Opera, etc.
+				else if (document.implementation && document.implementation.createDocument)
+				{
+					xsltProcessor=new XSLTProcessor();
+					xsltProcessor.importStylesheet(xsl);
+					resultDocument = xsltProcessor.transformToFragment(xmlObjG,document);
+					document.getElementById("example").appendChild(resultDocument);
+				}
+			}
+
+			function UpdateComment(){
+				var totalClasses = document.f1.totalClasses.value;
+
+				for (i=1;i<=totalClasses; i++) {
+
+					// get package element
+					var packageElmt = getElementByXmiId(i);
+
+					// add comment as child
+					var ownedCommentElmt = xmlObjG.createElement("ownedComment");
+					var ownedCommentid = "Class_Comment_"+i;
+					var ownedCommnetAnnotatedElmtID = packageElmt.getAttribute("xmi:id");
+					ownedCommentElmt.setAttribute("xmi:id",ownedCommentid);
+					ownedCommentElmt.setAttribute("annotatedElement",ownedCommnetAnnotatedElmtID);
+
+					//Create documentation tag
+					var documentationTag = xmlObjG.createElement("Default:Documentation");
+					var documentationTagID= "documentationTag_id_"+i;
+					documentationTag.setAttribute("xmi:id",documentationTagID);
+					documentationTag.setAttribute("base_Comment",ownedCommentid);
+
+					//Append documentation tag root note
+					xmlObjG.documentElement.appendChild(documentationTag);
+
+					//Append comment tag to package element (Class) node
+					packageElmt.appendChild(ownedCommentElmt);
+					ownedCommentbody = xmlObjG.createElement("body");
+					bodyTxt = xmlObjG.createTextNode(document.getElementById('txtArea_' + i).value);
+
+					ownedCommentbody.appendChild(bodyTxt);
+					ownedCommentElmt.appendChild(ownedCommentbody)
+
+				}
+				writeToFile();
+				alert("Please check RSM Model ");
+			}
+
+			function writeToFile() {
+				try {
+					var fso, s;
+					fso = new ActiveXObject("Scripting.FileSystemObject");
+					s = fso.OpenTextFile(path+fileName, 2, true);// 8=append 2=write, true=create if not exist
+					s.writeline(xmlObjG.xml);
+					s.Close();
+				}
+				catch(err){
+				var strErr = 'Error:';
+				strErr += '\nNumber:' + err.number;
+				strErr += '\nDescription:' + err.description;
+				document.write(strErr);
+				}
+			}
+
+			function getElementByXmiId(i) {
+
+				var root = xmlObjG.documentElement;
+				var model = root.childNodes(0);
+				pkgElmtId = document.getElementById('txtArea_' + i).name;
+
+				//find pkgElmt in emx with pkgElmtId
+				for( var j=0; j<model.childNodes.length; j++) {
+
+					var child = model.childNodes(j);
+					var childId = child.attributes.getNamedItem("xmi:id").value;
+
+					if(childId == pkgElmtId) {
+						// found
+						// alert('found' + child.tagName);
+						return child;
+					}
+
+				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<div id="div_header" >
+			<h3> RSM Documentation Updator </h3>
+		</div>
+
+
+		<div id="div_input" align="center">
+			<form>
+
+				<table align="center">
+					<tr>
+						<td dir="ltr">
+							Please enter program name:
+						</td>
+						<td>
+							<input type="file" class="file" size="50" style="border-width:1px"  value="" id="Inp_PrgName" name="Inp_PrgName" class="Field">
+							<!--div class="fakefile">
+								<input />
+								<img src="search.gif" />
+							</div-->
+
+						</td>
+					</tr>
+
+					<tr>
+						<td dir="ltr"></td>
+						<td align="left">
+							<img src="get_doc.gif"  name="component" title="Get documentation for the file selected above" onclick="displayResult()" accesskey="c"/>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+		<div id="example">
+
+		</div>
+	</body>
+
+</html>

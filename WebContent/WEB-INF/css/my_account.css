@@ -1,0 +1,70 @@
+#div_my_profile {
+	width:80%;
+	border-bottom: #f0f0f0 6px solid;
+	border-left: #f0f0f0 6px solid;
+	padding-bottom: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-bottom: 1em;
+	border-top: #f0f0f0 6px solid;
+	border-right: #f0f0f0 6px solid;
+	padding-top: 1em
+}
+
+#div_login,#div_personal,#div_preferences {
+	padding-bottom: 2em;
+}
+
+h4{
+	font-size: 12px;
+	padding-top:0.3em;
+	padding-bottom:0.3em;
+	padding-left:0.3em;
+	padding-right:0.3em;
+	
+	background:#f0f0f0;
+}
+
+dt {
+	float:left; 
+	line-height:20px;
+	width:150px
+}
+dd {
+	line-height:20px;
+}
+
+.tableView {
+	border:3px;
+	width:70%;
+}
+.tableView tr td.label{
+	width:30%;
+}
+.tableView tr td.label1{
+	width:50%;
+}
+
+.tableEdit {
+	border:3px;
+	width:70%;
+}
+.tableEdit tr td.label{
+	font-weight:bold;
+	width:30%;
+}
+.tableEdit tr td.label1{
+	font-weight:bold;
+	width:50%;
+}
+
+/********** MY Bookings ********/
+
+#tab_booking_dtls{
+	table-layout:fixed;
+	width:80%;
+	padding-top:10px;
+	padding-bottom:50px;
+	background:lightyellow
+} 
+ 
